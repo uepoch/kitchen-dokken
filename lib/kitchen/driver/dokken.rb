@@ -271,7 +271,7 @@ module Kitchen
           'Cmd' => Shellwords.shellwords(self[:pid_one_command]),
           'Image' => "#{repo(work_image)}:#{tag(work_image)}",
           'Hostname' => self[:hostname],
-          'Env' => self[:env],
+          'Env' => ['TEST_KITCHEN=true'],
           'ExposedPorts' => exposed_ports,
           'Volumes' => dokken_volumes,
           'HostConfig' => {
